@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+}
+
+#startButton {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  z-index: 3;
+}
+
+#restartButton {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Hover effect for both buttons */
+#startButton:hover,
+#restartButton:hover {
+  opacity: 0.8; /* Reduced opacity on hover */
+}
+
+/* Center the buttons on the screen */
+#startButton,
+#restartButton {
+  display: block;
+  margin: 150px 45%;
+  position: absolute;
+}
+
+.game-board {
+  margin: 10% 15%;
+  width: 70%;
+  height: 500px;
+  border-bottom: 15px solid rgb(35, 160, 35);
+  background: linear-gradient(#87ceeb, #e0f6ff);
+  position: relative;
+  overflow: hidden;
+}
+.clouds {
+  position: absolute;
+  width: 450px;
+  /* animation nuages */
+}
+.pipe {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+  right: 150px;
+  /* animation rigth infinite */
+  z-index: 2;
+}
+.mario {
+  width: 150px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+/* class jump pour sauter  */
+.jump {
+  animation: jump 500ms linear;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+  40% {
+    bottom: 180px;
+  }
+  50% {
+    bottom: 180px;
+  }
+  80% {
+    bottom: 180px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -450px;
+  }
+  to {
+    right: 100%;
+  }
+}
